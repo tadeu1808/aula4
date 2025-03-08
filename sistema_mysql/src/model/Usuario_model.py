@@ -33,6 +33,8 @@ class UsuarioModel:
         self.cursor.execute(query, user_id)
         return self.cursor.fetchone()
     
+
+    
     #def delete_user_by_id(self, user_id):
     #    query = "DELETE FROM usuarios WHERE id = %s"
     #    self.cursor.execute(query, user_id)

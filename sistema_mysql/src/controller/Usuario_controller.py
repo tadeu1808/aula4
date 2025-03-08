@@ -30,3 +30,4 @@ def obter_usuario(usuario_id):
     usuario = model.get_user_by_id(usuario_id)
     model.close_connection()
     return usuario
+

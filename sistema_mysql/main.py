@@ -49,7 +49,8 @@ def cadastrar_usuario():
     idade = input("Digite a idade: ")
     novo_id = Usuario_controller.cadastrar_usuario(email, nome, idade)
     print(f"usuario cadastrado com sucesso com o novo ID {novo_id}.")
-
+            
+             
 def usuario_atualizar():
     print("\n Atualizando o usuario")
     user_id = input("Digite o ID do usuario: ")
