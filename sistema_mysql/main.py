@@ -15,14 +15,14 @@ def listar_produtos():
     produtos = produto_controller.listar_produtos()
     if produtos:
         for produto in produtos:
-         print(f"ID: {produto['id']}, Nome: {produto['nome']}, Preco: {produto['produto']}")
+         print(f"ID: {produto['id']}, Nome: {produto['nome']}, Preco: {produto['preco']}")
     else:
         print("não existem produtos cadastrados")
     
 def cadastrar_produto():
-    print("\n ---Cadastar produto ")
-    nome = input("digite o nome:")
-    preco = input("Digite o preco")
+    print("\n ---Cadastar produto--- ")
+    nome = input("digite o nome: ")
+    preco = input("Digite o preco: ")
     novo_id = produto_controller.cadastrar_produto(nome, preco)
     print(f"Produto cadastrado com sucesso ocm o novo ID {novo_id}.")
 
