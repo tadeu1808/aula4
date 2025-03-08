@@ -1,4 +1,5 @@
-from model.produto_model import ProdutoModel
+from ..model.produto_model import ProdutoModel
+
 
 def listar_produtos():
     model = ProdutoModel()
@@ -17,6 +18,7 @@ def atualizar_produto(produto_id, nome, preco):
     linhas_afetadas = model.update_product_by_id(produto_id, nome, preco)
     model.close_connection()
     return linhas_afetadas
+
 def remover_produto(produto_id):
     model = ProdutoModel()
     linhas_afetadas = model.delete_product_by_id(produto_id)

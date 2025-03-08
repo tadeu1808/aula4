@@ -1,5 +1,5 @@
 import mysql.connector
-from sistema_mysql.config import Config
+from config import Config
 
 class ProdutoModel:
     
