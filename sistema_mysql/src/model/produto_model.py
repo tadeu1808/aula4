@@ -1,7 +1,7 @@
-import _mysql_connector
-from config import Config
+import mysql.connector
+from sistema_mysql.config import Config
 
-class ProduoModel:
+class ProdutoModel:
     
     def __init__(self):
         self.config = Config()
@@ -33,11 +33,26 @@ class ProduoModel:
         query = "SELECT id, nome, preco FROM produtos WHERE id = %s"
         self.cursor.execute(query, product_id)
         return self.cursor.fetchone()
+    
     def delete_product_by_id(self, product_id):
         query = "DELETE FROM produtos WHERE id = %s"
         self.cursor.execute(query, product_id)
+        self.connection.commit()
         return self.cursor.rowcount
     
+    def update_product_by_id(self, product_id, nome, preco):
+        query = "UPDATE produtos SET nome = %s, preco = %s WHERE id = %s"
+        self.cursor.execute(query, nome, preco, product_id)
+        self.connection.commit()
+        return self.cursor.rowcount
+    
+    def close_connection(self):
+        self.cursor.close()
+        self.connection.close()
+        
+        
+    
+        
     
     
     
